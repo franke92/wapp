@@ -7,8 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 
-##GOAL:
+## GOAL:
 Build a small weather application that displays current weather and 5-day forecast info for a list of locations.
 
-#NOTES:
+# NOTES:
 It's a simple project for angular certification exam purpose. It can be improved surely. 
