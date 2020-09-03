@@ -1,0 +1,5 @@
+<div class="container-fluid">
+    <app-message-box *ngIf="!!message" [message]="message"></app-message-box>
+    <app-location-box #mylocationbox (onNext)="next($event)"></app-location-box>
+    <app-weather-box *ngFor="let w of weatherData" [data]="w" (onClose)="closeWeatherBox($event)"></app-weather-box>
+</div>

@@ -1,0 +1,21 @@
+
+<div class="container-fluid" >
+    <app-message-box *ngIf="!data && !!message" [message]="message"></app-message-box>
+      <div class="panel panel-default" *ngIf="!!data">
+        <div class="panel-heading">
+          <h3 class="panel-title">5-day forecast for {{data.city.name}} ({{zipcode}})</h3>
+    
+        </div>
+        <ul class="list-group" *ngFor="let day of data.list; let i = index">
+          <!----><li class="list-group-item" *ngIf="i < 5">
+           {{day.dt | dateFormat}}
+            {{day.weather[0].main}}
+            - Min: {{day.temp.min | temperatureConverter : 'C'}} &#8451; 
+            - Max:{{day.temp.max | temperatureConverter : 'C'}} &#8451; 
+    
+            <img class="icon" [src] ="calculateImg(day.weather[0].main)">
+          </li>
+        </ul>
+      </div>
+      <button class="btn btn-success" tabindex="0" id="mainPageBtn" (click)="goToHomePage()">&lt; Back to Home</button>
+    </div>

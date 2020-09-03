@@ -1,0 +1,19 @@
+<div class="well flex">
+    <div>
+      <h3>{{data.city}}</h3>
+      <h4>Current conditions: {{data.condition}}</h4>
+      <h4>Temperatures today:</h4>
+      <p>
+        Current {{data.currentTemp | temperatureConverter : 'C'}} &#8451; 
+        - Max {{data.tempMin | temperatureConverter : 'C'  }} &#8451;
+        - Min {{data.tempMax | temperatureConverter : 'C'  }} &#8451;
+      </p>
+      <p>
+        <a (click)="goToForecastPage()">Show 5-day forecast for {{data.city}}</a>
+      </p>
+    </div>
+    <div>
+      <span class="close" (click)="onClose($event)">×</span>
+      <img [src]="urlImage">
+    </div>
+ </div>
